@@ -10,7 +10,7 @@ const CalendarDay = ({
 }) => (
   <button
     type="button"
-    className={`${css.day} ${isSameMonth ? '' : 'disabled'} ${isSameDay ? 'selected' : ''}`}
+    className={`${css.day} ${isSameMonth ? '' : css.disabled} ${isSameDay ? css.selected : ''}`}
     onClick={handleDayClick}
   >
     <span>{formattedDate}</span>

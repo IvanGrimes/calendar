@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CalendarDay from '../CalendarDay';
+import CalendarDayContainer from '../CalendarDay/CalendarDayContainer';
 import css from './CalendarWeek.module.css';
 
 const CalendarWeek = ({ days }) => (
   <div className={css.week}>
     {days.map(day => (
-      <CalendarDay
+      <CalendarDayContainer
         key={day}
         day={day}
       />

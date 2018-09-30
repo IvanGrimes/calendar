@@ -1,6 +1,8 @@
 import dateFns from 'date-fns';
 import React from 'react';
 import PropTypes from 'prop-types';
+import { IconContext } from 'react-icons';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import css from './CalendarHeader.module.css';
 
 const CalendarHeader = ({ handlePrevMonth, currentMonth, handleNextMonth }) => {
@@ -13,7 +15,9 @@ const CalendarHeader = ({ handlePrevMonth, currentMonth, handleNextMonth }) => {
         type="button"
         onClick={handlePrevMonth}
       >
-        chevron_left
+        <IconContext.Provider value={{ color: 'blue', className: 'global-class-name' }}>
+          <FaChevronLeft />
+        </IconContext.Provider>
       </button>
       <h3 className={css.heading}>
         {dateFns.format(currentMonth, dateFormat)}
@@ -23,7 +27,9 @@ const CalendarHeader = ({ handlePrevMonth, currentMonth, handleNextMonth }) => {
         type="button"
         onClick={handleNextMonth}
       >
-        chevron_right
+        <IconContext.Provider value={{ color: 'blue', className: 'global-class-name' }}>
+          <FaChevronRight />
+        </IconContext.Provider>
       </button>
     </div>
   );

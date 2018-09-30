@@ -1,4 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+* {
+  outline: 0;
+  box-sizing: border-box;
+}
+
 body {
+  font-family: Montserrat, sans-serif;
   margin: 0;
   padding: 0;
+}
+
+button {
+  border: 0;
+  background: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
 }

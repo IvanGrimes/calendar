@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import CalendarHeader from '../CalendarHeader';
+import CalendarHeaderContainer from '../CalendarHeader/CalendarHeaderContainer';
 import CalendarMonth from '../CalendarMonth/CalendarMonth';
 import CalendarWeekdayList from '../CalendarWeekdayList/CalendarWeekdayList';
 import css from './Calendar.module.css';
 
 const Calendar = ({ currentMonth }) => (
   <div className={css.calendar}>
-    <CalendarHeader />
+    <CalendarHeaderContainer />
     <CalendarWeekdayList
       currentMonth={currentMonth}
     />

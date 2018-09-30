@@ -1,12 +1,13 @@
-import React, { Fragment } from 'react';
-import Calendar from '../Calendar';
+import React  from 'react';
+import CalendarContainer from '../Calendar/CalendarContainer';
 import Events from '../Events';
+import css from './App.module.css';
 
 const App = () => (
-  <Fragment>
-    <Calendar />
+  <div className={css.container}>
+    <CalendarContainer />
     <Events />
-  </Fragment>
+  </div>
 );
 
 export default App;

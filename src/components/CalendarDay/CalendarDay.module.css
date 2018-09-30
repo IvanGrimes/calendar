@@ -1,3 +1,23 @@
 .day {
   composes: col from '../Calendar/Calendar.module.css';
+  display: flex;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.day:before {
+  content:'';
+  float:left;
+  padding-top:100%;
+}
+
+.disabled {
+  color: rgba(0, 0, 0, .5);
+}
+
+.selected {
+  color: red;
 }
