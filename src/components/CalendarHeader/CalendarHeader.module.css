@@ -1,0 +1,13 @@
+.container {
+  composes: row from '../Calendar/Calendar.module.css';
+  justify-content: space-between;
+}
+
+.button {
+  background: 0;
+  border: 0;
+}
+
+.heading {
+  margin: 0;
+}

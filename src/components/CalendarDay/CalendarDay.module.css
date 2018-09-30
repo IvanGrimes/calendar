@@ -1,0 +1,3 @@
+.day {
+  composes: col from '../Calendar/Calendar.module.css';
+}
