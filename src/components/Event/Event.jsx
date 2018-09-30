@@ -1,32 +1,30 @@
-import dateFns from 'date-fns';
 import React from 'react';
 import PropTypes from 'prop-types';
 import EventEditContainer from '../EventEdit/EventEditContainer';
 
-const Event = ({ event, editingEventId, handleEditEvent, handleDeleteEvent }) => (
-  editingEventId === event.id ? (
+const Event = ({ event, editing, handleEditEvent, handleDeleteEvent }) => (
+  editing ? (
     <EventEditContainer />
   ) : (
     <div>
       <div>
         <p>
-          {dateFns.format(event.date, 'hh:mm')}
-          {dateFns.format(event.date, 'A')}
+          {event.time}
         </p>
         <h4>
           {event.title}
         </h4>
-        {!editingEventId ? (
+        {!editing ? (
           <button
             type="button"
-            onClick={() => handleEditEvent(event.id)}
+            onClick={handleEditEvent}
           >
             edit
           </button>
         ) : null}
         <button
           type="button"
-          onClick={() => handleDeleteEvent(event.id)}
+          onClick={handleDeleteEvent}
         >
           X
         </button>

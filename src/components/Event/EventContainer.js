@@ -1,3 +1,4 @@
+import dateFns from 'date-fns';
 import { Component, createElement } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -26,17 +27,33 @@ class EventContainer extends Component {
     handleDeleteEvent: PropTypes.func.isRequired,
   };
 
+  handleEditEvent = () => {
+    const { handleEditEvent, event } = this.props;
+
+    handleEditEvent(event.id);
+  };
+
+  handleDeleteEvent = () => {
+    const { handleDeleteEvent, event } = this.props;
+
+    handleDeleteEvent(event.id);
+  };
+
   render() {
-    const { event, editingEventId, handleEditEvent, handleDeleteEvent } = this.props;
+    const { event, editingEventId } = this.props;
+    const eventWithTime = {
+      ...event,
+      time: `${dateFns.format(event.date, 'hh:mm')} ${dateFns.format(event.date, 'A')}`,
+    };
 
     return (
       createElement(
         Event,
         {
-          event,
-          editingEventId,
-          handleEditEvent,
-          handleDeleteEvent,
+          event: eventWithTime,
+          editing: event.id === editingEventId,
+          handleEditEvent: this.handleEditEvent,
+          handleDeleteEvent: this.handleDeleteEvent,
         },
       )
     );

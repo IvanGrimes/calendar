@@ -5,31 +5,8 @@ import dateFns from 'date-fns';
 class EventEdit extends Component {
   static propTypes = {};
 
-  state = {
-    title: '',
-    time: '',
-    description: '',
-  };
-
-  componentDidMount() {
-    const { editingEvent } = this.props;
-
-    this.setState({
-      title: editingEvent.title,
-      time: dateFns.format(editingEvent.date, 'HH:mm'),
-      description: editingEvent.description,
-    });
-  }
-
-  handleChange = (ev) => {
-    this.setState({
-      [ev.target.id]: ev.target.value,
-    });
-  };
-
   render() {
-    const { title, time, description } = this.state;
-    const { handleCancelEdit, handleFinishEdit } = this.props;
+    const { handleCancelEdit, handleFinishEdit, title, time, description, handleChange, isFormValid } = this.props;
 
     return (
       <form>
@@ -38,20 +15,20 @@ class EventEdit extends Component {
           type="text"
           placeholder="title"
           value={title}
-          onChange={ev => this.handleChange(ev)}
+          onChange={handleChange}
         />
         <input
           id="time"
           type="time"
           placeholder="time"
           value={time}
-          onChange={ev => this.handleChange(ev)}
+          onChange={handleChange}
         />
         <textarea
           id="description"
           placeholder="description"
           value={description}
-          onChange={ev => this.handleChange(ev)}
+          onChange={handleChange}
         ></textarea>
         <button
           type="button"
@@ -61,8 +38,8 @@ class EventEdit extends Component {
         </button>
         <button
           type="submit"
-          disabled={!title || !time || !description}
-          onClick={ev => handleFinishEdit(ev, { title, time, description })}
+          disabled={!isFormValid}
+          onClick={handleFinishEdit}
         >
           Done
         </button>

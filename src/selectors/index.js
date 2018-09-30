@@ -7,18 +7,20 @@ const getEvents = state => state.events.list;
 export const getEditingEventId = state => state.events.editingEventId;
 
 const getEventsBySelectedDate = createSelector(
-  getEvents,
-  getSelectedDate,
+  [getEvents, getSelectedDate],
   (events, selectedDate) => events.filter(event => dateFns.isSameDay(event.date, selectedDate)),
 );
 
 export const sortEventsByDate = createSelector(
-  getEventsBySelectedDate,
+  [getEventsBySelectedDate],
   events => events.sort((a, b) => a.date - b.date),
 );
 
 export const getEditingEvent = createSelector(
-  getEvents,
-  getEditingEventId,
+  [getEvents, getEditingEventId],
   (events, editingEventId) => events.filter(event => event.id === editingEventId)[0],
+);
+
+export const getQuantityOfEventsByDate = (state, props) => (
+  state.events.list.filter(event => dateFns.isSameDay(event.date, props.date)).length
 );

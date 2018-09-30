@@ -21,23 +21,50 @@ class EventCreateContainer extends Component {
     handleCreateEvent: PropTypes.func.isRequired,
   };
 
-  handleCreateEvent = (ev, event) => {
+  state = {
+    title: '',
+    time: '',
+    description: '',
+  };
+
+  get isFormValid() {
+    const { title, time, description } = this.state;
+
+    return title && time && description;
+  }
+
+  handleChange = (ev) => {
+    this.setState({
+      [ev.target.id]: ev.target.value,
+    });
+  };
+
+  handleCreateEvent = (ev) => {
     ev.preventDefault();
     const { handleCreateEvent, selectedDate } = this.props;
+    const { title, time, description } = this.state;
 
     handleCreateEvent({
-      ...event,
-      date: setTimeFromTimeStringToDate(event.time, selectedDate),
+      title,
+      description,
+      date: setTimeFromTimeStringToDate(time, selectedDate),
       id: uuid(),
     });
   };
 
   render() {
+    const { title, time, description } = this.state;
+
     return (
       createElement(
         EventCreate,
         {
           handleCreateEvent: this.handleCreateEvent,
+          handleChange: this.handleChange,
+          title,
+          time,
+          description,
+          isFormValid: this.isFormValid,
         },
       )
     );

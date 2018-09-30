@@ -8,7 +8,7 @@ const CalendarWeek = ({ days }) => (
     {days.map(day => (
       <CalendarDayContainer
         key={day}
-        day={day}
+        date={day}
       />
     ))}
   </div>

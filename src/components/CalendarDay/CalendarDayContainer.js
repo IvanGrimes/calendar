@@ -6,12 +6,14 @@ import { selectDate } from '../../actions/calendar';
 import {
   getCurrentMonth,
   getSelectedDate,
+  getQuantityOfEventsByDate,
 } from '../../selectors/index';
 import CalendarDay from './CalendarDay';
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state, props) => ({
   currentMonth: getCurrentMonth(state),
   selectedDate: getSelectedDate(state),
+  hasEvent: getQuantityOfEventsByDate(state, props),
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -19,25 +21,25 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const CalendarDayContainer = ({
-  day,
+  date,
   currentMonth,
   selectedDate,
   handleSelectDate,
+  hasEvent,
 }) => {
-  const dateFormat = 'D';
-  const formattedDate = dateFns.format(day, dateFormat);
   const monthStart = dateFns.startOfMonth(currentMonth);
-  const isSameMonth = dateFns.isSameMonth(day, monthStart);
-  const isSameDay = dateFns.isSameDay(day, selectedDate);
+  const isSameMonth = dateFns.isSameMonth(date, monthStart);
+  const isSameDay = dateFns.isSameDay(date, selectedDate);
 
   return (
     createElement(
       CalendarDay, {
-        day,
         isSameMonth,
         isSameDay,
-        formattedDate,
-        handleDayClick: () => handleSelectDate(dateFns.parse(day)),
+        handleSelectDate,
+        hasEvent,
+        day: dateFns.format(date, 'D'),
+        handleDayClick: () => handleSelectDate(dateFns.parse(date)),
       },
     )
   );

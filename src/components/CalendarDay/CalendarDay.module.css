@@ -1,5 +1,6 @@
 .day {
   composes: col from '../Calendar/Calendar.module.css';
+  position: relative;
   display: flex;
   height: auto;
   align-items: center;
@@ -8,10 +9,10 @@
   border-bottom: 1px solid black;
 }
 
-.day:before {
-  content:'';
-  float:left;
-  padding-top:100%;
+.day::before {
+  content: '';
+  float: left;
+  padding-top: 100%;
 }
 
 .disabled {
@@ -20,4 +21,17 @@
 
 .selected {
   color: red;
+}
+
+.hasEvent::after {
+  content: '';
+  position: absolute;
+  top: -13px;
+  right: -3px;
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-left: 20px solid green;
+  transform: rotate(-45deg);
 }

@@ -1,3 +1,4 @@
+import dateFns from 'date-fns';
 import { Component, createElement } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -7,10 +8,6 @@ import Events from './Events';
 const mapStateToProps = state => ({
   events: sortEventsByDate(state),
   selectedDate: getSelectedDate(state),
-});
-
-const mapDispatchToProps = dispatch => ({
-
 });
 
 class EventsContainer extends Component {
@@ -31,10 +28,11 @@ class EventsContainer extends Component {
         {
           selectedDate,
           events,
+          formattedDate: dateFns.format(selectedDate, 'DD MMMM, YYYY'),
         },
       )
     );
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(EventsContainer);
+export default connect(mapStateToProps)(EventsContainer);

@@ -6,14 +6,20 @@ const CalendarDay = ({
   isSameMonth,
   isSameDay,
   handleDayClick,
-  formattedDate,
+  day,
+  hasEvent,
 }) => (
   <button
     type="button"
-    className={`${css.day} ${isSameMonth ? '' : css.disabled} ${isSameDay ? css.selected : ''}`}
+    className={`
+      ${css.day}
+      ${isSameMonth ? '' : css.disabled}
+      ${isSameDay ? css.selected : ''}
+      ${hasEvent ? css.hasEvent : ''}
+    `}
     onClick={handleDayClick}
   >
-    <span>{formattedDate}</span>
+    <span>{day}</span>
   </button>
 );
 
@@ -21,7 +27,8 @@ CalendarDay.propTypes = {
   isSameMonth: PropTypes.bool.isRequired,
   isSameDay: PropTypes.bool.isRequired,
   handleDayClick: PropTypes.func.isRequired,
-  formattedDate: PropTypes.string.isRequired,
+  day: PropTypes.string.isRequired,
+  hasEvent: PropTypes.bool.isRequired,
 };
 
 export default CalendarDay;

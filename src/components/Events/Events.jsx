@@ -1,14 +1,13 @@
-import dateFns from 'date-fns';
 import React from 'react';
 import PropTypes from 'prop-types';
 import EventContainer from '../Event/EventContainer';
 import EventCreateContainer from '../EventCreate/EventCreateContainer';
 
-const Events = ({ selectedDate, events }) => (
+const Events = ({ selectedDate, events, formattedDate }) => (
   <div>
     <h3>
       Events from&nbsp;
-      {dateFns.format(selectedDate, 'DD MMMM, YYYY')}
+      {formattedDate}
     </h3>
     <div>
       {events.map(event => (
