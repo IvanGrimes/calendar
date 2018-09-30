@@ -1,6 +1,10 @@
-import dateFns from 'date-fns';
 import uuid from 'uuid/v4';
-import { CREATE_EVENT, DELETE_EVENT } from '../constants/eventActions';
+import {
+  CREATE_EVENT,
+  DELETE_EVENT, EDIT_EVENT_CANCEL,
+  EDIT_EVENT_FINISH,
+  EDIT_EVENT_START,
+} from '../constants/eventActions';
 
 const initialState = {
   list: [
@@ -29,6 +33,7 @@ const initialState = {
       date: new Date(),
     },
   ],
+  editingEventId: '',
 };
 
 export default function events(state = initialState, action) {
@@ -42,6 +47,27 @@ export default function events(state = initialState, action) {
       return {
         ...state,
         list: state.list.filter(event => event.id !== action.payload),
+      };
+    case EDIT_EVENT_START:
+      return {
+        ...state,
+        editingEventId: action.payload,
+      };
+    case EDIT_EVENT_CANCEL:
+      return {
+        ...state,
+        editingEventId: '',
+      };
+    case EDIT_EVENT_FINISH:
+      return {
+        ...state,
+        list: state.list.map((event) => {
+          if (event.id === action.payload.id) {
+            return action.payload;
+          }
+          return event;
+        }),
+        editingEventId: '',
       };
     default:
       return state;
