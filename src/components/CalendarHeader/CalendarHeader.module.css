@@ -1,6 +1,7 @@
 .container {
   composes: row from '../Calendar/Calendar.module.css';
   justify-content: space-between;
+  padding: 40px 0;
 }
 
 .button {

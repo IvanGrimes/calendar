@@ -3,24 +3,27 @@
   position: relative;
   display: flex;
   height: auto;
-  align-items: center;
-  justify-content: center;
-  border-left: 1px solid rgb(148, 148, 148);
-  border-bottom: 1px solid rgb(148, 148, 148);
+  justify-content: flex-end;
+  border-left: 1px solid rgb(211, 211, 211);
+  border-bottom: 1px solid rgb(211, 211, 211);
+}
+
+.day:first-child {
+  border-left: 0;
 }
 
 .day::before {
   content: '';
   float: left;
-  padding-top: 100%;
+  padding-top: 75%;
 }
 
-.disabled {
-  color: rgba(0, 0, 0, .5);
+.disabled .date {
+  opacity: .5;
 }
 
-.selected {
-  color: red;
+.selected .cloneDate {
+  opacity: .05;
 }
 
 .hasEvent::after {
@@ -36,6 +39,23 @@
   transform: rotate(-45deg);
 }
 
-.dayDate {
+.date {
   font-size: 20px;
+  margin: 10px 10px 0 0;
+  font-weight: 700;
+  color: #4b4b4b;
+}
+
+.cloneDate {
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  font-size: 8em;
+  line-height: .95;
+  height: 100%;
+  width: 100%;
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity .2s ease-in;
 }

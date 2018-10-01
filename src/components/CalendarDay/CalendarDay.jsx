@@ -19,7 +19,8 @@ const CalendarDay = ({
     `}
     onClick={handleDayClick}
   >
-    <span className={css.dayDate}>{day}</span>
+    <span className={css.cloneDate}>{day}</span>
+    <span className={css.date}>{day}</span>
   </button>
 );
 

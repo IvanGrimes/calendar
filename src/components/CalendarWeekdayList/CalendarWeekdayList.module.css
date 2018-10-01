@@ -1,6 +1,7 @@
 .container {
   composes: row from '../Calendar/Calendar.module.css';
-  margin: 40px 0 0 0;
-  border: 1px solid rgb(148, 148, 148);
+  border-top: 1px solid rgb(211, 211, 211);
+  border-bottom: 1px solid rgb(211, 211, 211);
   border-bottom: 0;
+  padding: 15px 0;
 }
