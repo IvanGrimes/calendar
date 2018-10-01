@@ -16,9 +16,33 @@ const initialState = {
     },
     {
       id: uuid(),
+      title: 'First event',
+      description: 'Some event description',
+      date: new Date('Sun Oct 01 2018 07:00:00 GMT+0300 (Москва, стандартное время)'),
+    },
+    {
+      id: uuid(),
       title: 'Second event',
       description: 'Some event description',
       date: new Date('Sun Oct 22 2018 19:00:00 GMT+0300 (Москва, стандартное время)'),
+    },
+    {
+      id: uuid(),
+      title: 'Second event',
+      description: 'Some event description',
+      date: new Date('Sun Oct 22 2018 19:00:00 GMT+0300 (Москва, стандартное время)'),
+    },
+    {
+      id: uuid(),
+      title: 'Third event',
+      description: 'Some event description',
+      date: new Date('Sun Oct 30 2018 12:00:00 GMT+0300 (Москва, стандартное время)'),
+    },
+    {
+      id: uuid(),
+      title: 'Third event',
+      description: 'Some event description',
+      date: new Date('Sun Oct 30 2018 12:00:00 GMT+0300 (Москва, стандартное время)'),
     },
     {
       id: uuid(),

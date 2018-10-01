@@ -25,7 +25,9 @@
   opacity: .05;
 }
 
-.disabled .date {
+.disabled .date,
+.disabled .eventsQuantity,
+.disabled.hasEvent::after {
   opacity: .5;
 }
 
@@ -70,4 +72,16 @@
   color: #7D155B;
   opacity: 0;
   transition: opacity .2s ease-in;
+}
+
+.eventsQuantity {
+  display: flex;
+  align-self: stretch;
+  align-items: flex-end;
+  bottom: 0;
+  width: 100%;
+  font-weight: 400;
+  font-size: 14px;
+  margin: 0 0 5px 20px;
+  color: #4b4b4b;
 }

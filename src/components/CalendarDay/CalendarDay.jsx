@@ -21,7 +21,7 @@ const CalendarDay = ({
   >
     {eventsQuantity ? (
       <span className={css.eventsQuantity}>
-        {`You're have ${eventsQuantity} ${eventsQuantity === 1 ? ' event' : ' events'}`}
+        {`Events: ${eventsQuantity}`}
       </span>
     ) : null}
     <span className={css.cloneDate}>{day}</span>
