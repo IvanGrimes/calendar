@@ -50,6 +50,12 @@ class EventCreateContainer extends Component {
       date: setTimeFromTimeStringToDate(time, selectedDate),
       id: uuid(),
     });
+
+    this.setState({
+      title: '',
+      time: '',
+      description: '',
+    });
   };
 
   render() {

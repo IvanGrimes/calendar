@@ -13,7 +13,7 @@ import CalendarDay from './CalendarDay';
 const mapStateToProps = (state, props) => ({
   currentMonth: getCurrentMonth(state),
   selectedDate: getSelectedDate(state),
-  hasEvent: getQuantityOfEventsByDate(state, props),
+  eventsQuantity: getQuantityOfEventsByDate(state, props),
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -25,7 +25,7 @@ const CalendarDayContainer = ({
   currentMonth,
   selectedDate,
   handleSelectDate,
-  hasEvent,
+  eventsQuantity,
 }) => {
   const monthStart = dateFns.startOfMonth(currentMonth);
   const isSameMonth = dateFns.isSameMonth(date, monthStart);
@@ -37,7 +37,7 @@ const CalendarDayContainer = ({
         isSameMonth,
         isSameDay,
         handleSelectDate,
-        hasEvent,
+        eventsQuantity,
         day: dateFns.format(date, 'D'),
         handleDayClick: () => handleSelectDate(dateFns.parse(date)),
       },

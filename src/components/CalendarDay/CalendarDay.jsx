@@ -7,7 +7,7 @@ const CalendarDay = ({
   isSameDay,
   handleDayClick,
   day,
-  hasEvent,
+  eventsQuantity,
 }) => (
   <button
     type="button"
@@ -15,10 +15,15 @@ const CalendarDay = ({
       ${css.day}
       ${isSameMonth ? '' : css.disabled}
       ${isSameDay ? css.selected : ''}
-      ${hasEvent ? css.hasEvent : ''}
+      ${eventsQuantity ? css.hasEvent : ''}
     `}
     onClick={handleDayClick}
   >
+    {eventsQuantity ? (
+      <span className={css.eventsQuantity}>
+        {`You're have ${eventsQuantity} ${eventsQuantity === 1 ? ' event' : ' events'}`}
+      </span>
+    ) : null}
     <span className={css.cloneDate}>{day}</span>
     <span className={css.date}>{day}</span>
   </button>

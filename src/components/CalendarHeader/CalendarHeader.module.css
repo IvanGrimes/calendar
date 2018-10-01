@@ -2,10 +2,21 @@
   composes: row from '../Calendar/Calendar.module.css';
   justify-content: space-between;
   padding: 40px 0;
+  position: relative;
 }
 
 .button {
 
+}
+
+.buttonPrev {
+  composes: button;
+  margin: 0 0 0 20px;
+}
+
+.buttonNext {
+  composes: button;
+  margin: 0 20px 0 0;
 }
 
 .buttonIcon {
@@ -14,4 +25,10 @@
 
 .heading {
   margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  font-weight: 400;
 }

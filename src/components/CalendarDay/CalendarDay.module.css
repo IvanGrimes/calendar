@@ -6,6 +6,9 @@
   justify-content: flex-end;
   border-left: 1px solid rgb(211, 211, 211);
   border-bottom: 1px solid rgb(211, 211, 211);
+  background-color: transparent;
+  transition: background-color .2s linear;
+  cursor: pointer;
 }
 
 .day:first-child {
@@ -18,6 +21,10 @@
   padding-top: 75%;
 }
 
+.day:hover .cloneDate {
+  opacity: .05;
+}
+
 .disabled .date {
   opacity: .5;
 }
@@ -26,17 +33,18 @@
   opacity: .05;
 }
 
+.day.hasEvent {
+  background-color: rgba(125, 21, 91, 0.05);
+}
+
 .hasEvent::after {
   content: '';
   position: absolute;
-  top: -13px;
-  right: -3px;
-  width: 0;
-  height: 0;
-  border-top: 20px solid transparent;
-  border-bottom: 20px solid transparent;
-  border-left: 20px solid green;
-  transform: rotate(-45deg);
+  top: 0;
+  left: 0;
+  width: 13px;
+  height: 100%;
+  background-image: linear-gradient(to bottom, #7D155B, #8C1566);
 }
 
 .date {
@@ -49,13 +57,17 @@
 .cloneDate {
   position: absolute;
   left: 50%;
-  top: 55%;
+  top: 50%;
   transform: translate(-50%, -50%);
-  font-size: 8em;
-  line-height: .95;
+  font-size: 6em;
+  line-height: 1.25;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
   height: 100%;
   width: 100%;
   font-weight: 700;
+  color: #7D155B;
   opacity: 0;
   transition: opacity .2s ease-in;
 }

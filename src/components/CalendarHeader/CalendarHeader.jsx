@@ -11,7 +11,7 @@ const CalendarHeader = ({ handlePrevMonth, currentMonth, handleNextMonth }) => {
   return (
     <div className={css.container}>
       <button
-        className={css.button}
+        className={css.buttonPrev}
         type="button"
         onClick={handlePrevMonth}
       >
@@ -19,11 +19,13 @@ const CalendarHeader = ({ handlePrevMonth, currentMonth, handleNextMonth }) => {
           <FaChevronLeft />
         </IconContext.Provider>
       </button>
+
       <h3 className={css.heading}>
         {dateFns.format(currentMonth, dateFormat)}
       </h3>
+
       <button
-        className={css.button}
+        className={css.buttonNext}
         type="button"
         onClick={handleNextMonth}
       >
