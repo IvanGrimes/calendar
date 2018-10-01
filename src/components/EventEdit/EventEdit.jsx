@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import dateFns from 'date-fns';
+import css from './EventEdit.module.css';
 
 class EventEdit extends Component {
   static propTypes = {};
@@ -9,8 +9,9 @@ class EventEdit extends Component {
     const { handleCancelEdit, handleFinishEdit, title, time, description, handleChange, isFormValid } = this.props;
 
     return (
-      <form>
+      <form className={css.form}>
         <input
+          className={css.inputTitle}
           id="title"
           type="text"
           placeholder="title"
@@ -18,6 +19,7 @@ class EventEdit extends Component {
           onChange={handleChange}
         />
         <input
+          className={css.inputTime}
           id="time"
           type="time"
           placeholder="time"
@@ -25,24 +27,29 @@ class EventEdit extends Component {
           onChange={handleChange}
         />
         <textarea
+          className={css.inputDescription}
           id="description"
           placeholder="description"
           value={description}
           onChange={handleChange}
         ></textarea>
-        <button
-          type="button"
-          onClick={handleCancelEdit}
-        >
-          Cancel
-        </button>
-        <button
-          type="submit"
-          disabled={!isFormValid}
-          onClick={handleFinishEdit}
-        >
-          Done
-        </button>
+        <div className={css.controls}>
+          <button
+            className={css.cancel}
+            type="button"
+            onClick={handleCancelEdit}
+          >
+            Cancel
+          </button>
+          <button
+            className={css.done}
+            type="submit"
+            disabled={!isFormValid}
+            onClick={handleFinishEdit}
+          >
+            Done
+          </button>
+        </div>
       </form>
     );
   }

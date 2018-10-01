@@ -1,4 +1,12 @@
 .container {
-  max-width: 800px;
-  margin: 0 auto;
+  margin: 40px auto 0 auto;
+  width: 60%;
+}
+
+.title {
+  margin: 0;
+}
+
+.events {
+
 }

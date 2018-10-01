@@ -5,8 +5,8 @@
   height: auto;
   align-items: center;
   justify-content: center;
-  border-left: 1px solid black;
-  border-bottom: 1px solid black;
+  border-left: 1px solid rgb(148, 148, 148);
+  border-bottom: 1px solid rgb(148, 148, 148);
 }
 
 .day::before {
@@ -34,4 +34,8 @@
   border-bottom: 20px solid transparent;
   border-left: 20px solid green;
   transform: rotate(-45deg);
+}
+
+.dayDate {
+  font-size: 20px;
 }

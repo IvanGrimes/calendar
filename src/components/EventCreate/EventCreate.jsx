@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import css from './EventCreate.module.css';
 
 const EventCreate = ({
   handleCreateEvent,
@@ -9,33 +10,36 @@ const EventCreate = ({
   handleChange,
   isFormValid
 }) => (
-  <form>
+  <form className={css.form}>
     <input
+      className={css.inputTitle}
       id="title"
       type="text"
-      placeholder="title"
+      placeholder="Event's title"
       value={title}
       onChange={handleChange}
     />
     <input
+      className={css.inputTime}
       id="time"
       type="time"
-      placeholder="time"
       value={time}
       onChange={handleChange}
     />
     <textarea
+      className={css.inputDescription}
       id="description"
-      placeholder="description"
+      placeholder="Event's description"
       value={description}
       onChange={handleChange}
     ></textarea>
     <button
+      className={css.submit}
       type="submit"
       disabled={!isFormValid}
       onClick={handleCreateEvent}
     >
-      Create
+      Create new event
     </button>
   </form>
 );

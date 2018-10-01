@@ -15,7 +15,7 @@ const CalendarHeader = ({ handlePrevMonth, currentMonth, handleNextMonth }) => {
         type="button"
         onClick={handlePrevMonth}
       >
-        <IconContext.Provider value={{ color: 'blue', className: 'global-class-name' }}>
+        <IconContext.Provider value={{ color: 'black', className: css.buttonIcon }}>
           <FaChevronLeft />
         </IconContext.Provider>
       </button>
@@ -27,7 +27,7 @@ const CalendarHeader = ({ handlePrevMonth, currentMonth, handleNextMonth }) => {
         type="button"
         onClick={handleNextMonth}
       >
-        <IconContext.Provider value={{ color: 'blue', className: 'global-class-name' }}>
+        <IconContext.Provider value={{ color: 'black', className: css.buttonIcon }}>
           <FaChevronRight />
         </IconContext.Provider>
       </button>

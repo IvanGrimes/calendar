@@ -2,4 +2,7 @@
   composes: col from '../Calendar/Calendar.module.css';
   display: flex;
   justify-content: center;
+  border-right: 1px solid rgb(148, 148, 148);
+  padding: 5px 0;
+  font-size: 14px;
 }

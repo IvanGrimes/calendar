@@ -1,0 +1,33 @@
+.event {
+  border-bottom: 1px solid black;
+  padding: 40px 0;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  margin: 0;
+}
+
+.controls {
+
+}
+
+.edit {
+  margin: 0 20px 0 0;
+}
+
+.delete {
+
+}
+
+.time {
+  margin: 20px 0 0 0;
+}
+
+.description {
+  margin: 20px 0 0 0;
+}

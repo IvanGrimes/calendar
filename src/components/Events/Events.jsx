@@ -2,14 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import EventContainer from '../Event/EventContainer';
 import EventCreateContainer from '../EventCreate/EventCreateContainer';
+import css from './Events.module.css';
 
 const Events = ({ selectedDate, events, formattedDate }) => (
-  <div>
-    <h3>
+  <div className={css.container}>
+    <h3 className={css.title}>
       Events from&nbsp;
       {formattedDate}
     </h3>
-    <div>
+    <div className={css.events}>
       {events.map(event => (
         <EventContainer
           key={event.id}

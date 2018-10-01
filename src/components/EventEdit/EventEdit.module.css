@@ -1,0 +1,27 @@
+.form {
+  composes: form from '../EventCreate/EventCreate.module.css';
+}
+
+.inputTitle {
+  composes: inputTitle from '../EventCreate/EventCreate.module.css';
+}
+
+.inputTime {
+  composes: inputTime from '../EventCreate/EventCreate.module.css';
+}
+
+.inputDescription {
+  composes: inputDescription from '../EventCreate/EventCreate.module.css';
+}
+
+.controls {
+
+}
+
+.done {
+
+}
+
+.cancel {
+
+}
