@@ -35,19 +35,19 @@ class EventEdit extends Component {
         ></textarea>
         <div className={css.controls}>
           <button
-            className={css.cancel}
-            type="button"
-            onClick={handleCancelEdit}
-          >
-            Cancel
-          </button>
-          <button
             className={css.done}
             type="submit"
             disabled={!isFormValid}
             onClick={handleFinishEdit}
           >
             Done
+          </button>
+          <button
+            className={css.cancel}
+            type="button"
+            onClick={handleCancelEdit}
+          >
+            Cancel
           </button>
         </div>
       </form>

@@ -2,6 +2,8 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import EventEditContainer from '../EventEdit/EventEditContainer';
 import css from './Event.module.css';
+import { IconContext } from 'react-icons';
+import { FaEdit, FaTrashAlt } from 'react-icons/fa';
 
 const Event = ({ event, editing, handleEditEvent, handleDeleteEvent }) => (
   <div className={css.event}>
@@ -20,7 +22,11 @@ const Event = ({ event, editing, handleEditEvent, handleDeleteEvent }) => (
                 type="button"
                 onClick={handleEditEvent}
               >
-                edit
+                <IconContext.Provider value={{ className: css.editIcon }}>
+                  <div>
+                    <FaEdit />
+                  </div>
+                </IconContext.Provider>
               </button>
             ) : null}
             <button
@@ -28,7 +34,11 @@ const Event = ({ event, editing, handleEditEvent, handleDeleteEvent }) => (
               type="button"
               onClick={handleDeleteEvent}
             >
-              X
+              <IconContext.Provider value={{ className: css.deleteIcon }}>
+                <div>
+                  <FaTrashAlt />
+                </div>
+              </IconContext.Provider>
             </button>
           </div>
         </div>

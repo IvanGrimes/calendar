@@ -1,5 +1,5 @@
 .event {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgb(211, 211, 211);
   padding: 40px 0;
 }
 
@@ -10,24 +10,50 @@
 
 .title {
   margin: 0;
+  color: #4b4b4b;
 }
 
 .controls {
 
 }
 
+.icon {
+  font-size: 20px;
+  color: #8C1566;
+}
+
+.icon:hover {
+  color: #781655;
+  transition: color .2s linear;
+}
+
+.editIcon {
+  composes: icon;
+}
+
+.deleteIcon {
+  composes: icon;
+}
+
+.button {
+  cursor: pointer;
+}
+
 .edit {
+  composes: button;
   margin: 0 20px 0 0;
 }
 
 .delete {
-
+  composes: button;
 }
 
 .time {
   margin: 20px 0 0 0;
+  color: #4b4b4b;
 }
 
 .description {
   margin: 20px 0 0 0;
+  color: #4b4b4b;
 }

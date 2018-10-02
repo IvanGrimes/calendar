@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=cyrillic');
 
 * {
   outline: 0;
   box-sizing: border-box;
   line-height: 1;
   margin: 0;
-  font-family: Montserrat, sans-serif;
+  font-family: Roboto, sans-serif;
 }
 
 body {

@@ -21,6 +21,7 @@
 
 .buttonIcon {
   font-size: 20px;
+  color: #8C1566;
 }
 
 .heading {
@@ -30,5 +31,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
   text-transform: uppercase;
-  font-weight: 400;
+  font-weight: 700;
+  color: #4b4b4b;
 }

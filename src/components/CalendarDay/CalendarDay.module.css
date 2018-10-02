@@ -35,7 +35,12 @@
   opacity: .05;
 }
 
+.day.selected,
 .day.hasEvent {
+  background-color: rgba(125, 21, 91, 0.05);
+}
+
+.day:hover {
   background-color: rgba(125, 21, 91, 0.05);
 }
 
@@ -80,7 +85,7 @@
   align-items: flex-end;
   bottom: 0;
   width: 100%;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 14px;
   margin: 0 0 5px 20px;
   color: #4b4b4b;
