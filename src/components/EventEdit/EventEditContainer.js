@@ -1,4 +1,4 @@
-import dateFns from "date-fns";
+import dateFns from 'date-fns';
 import { Component, createElement } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -17,19 +17,21 @@ const mapDispatchToProps = dispatch => ({
 });
 
 class EventEditContainer extends Component {
-  static propTypes = {};
+  static propTypes = {
+    editingEvent: PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      date: PropTypes.instanceOf(Date).isRequired,
+      description: PropTypes.string.isRequired,
+    }).isRequired,
+    handleCancelEdit: PropTypes.func.isRequired,
+    handleFinishEdit: PropTypes.func.isRequired,
+  };
 
   state = {
     title: '',
     time: '',
     description: '',
   };
-
-  get isFormValid() {
-    const { title, time, description } = this.state;
-
-    return title && time && description;
-  }
 
   componentDidMount() {
     const { editingEvent } = this.props;
@@ -39,6 +41,12 @@ class EventEditContainer extends Component {
       time: dateFns.format(editingEvent.date, 'HH:mm'),
       description: editingEvent.description,
     });
+  }
+
+  get isFormValid() {
+    const { title, time, description } = this.state;
+
+    return !!title && !!time && !!description;
   }
 
   handleChange = (ev) => {

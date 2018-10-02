@@ -4,7 +4,7 @@ import EventContainer from '../Event/EventContainer';
 import EventCreateContainer from '../EventCreate/EventCreateContainer';
 import css from './Events.module.css';
 
-const Events = ({ selectedDate, events, formattedDate }) => (
+const Events = ({ events, formattedDate }) => (
   <div className={css.container}>
     <h3 className={css.title}>
       Events from&nbsp;
@@ -23,12 +23,12 @@ const Events = ({ selectedDate, events, formattedDate }) => (
 );
 
 Events.propTypes = {
-  selectedDate: PropTypes.instanceOf(Date).isRequired,
   events: PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     date: PropTypes.instanceOf(Date).isRequired,
   })).isRequired,
+  formattedDate: PropTypes.string.isRequired,
 };
 
 export default Events;

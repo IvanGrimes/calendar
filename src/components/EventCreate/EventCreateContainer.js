@@ -30,7 +30,7 @@ class EventCreateContainer extends Component {
   get isFormValid() {
     const { title, time, description } = this.state;
 
-    return title && time && description;
+    return !!title && !!time && !!description;
   }
 
   handleChange = (ev) => {

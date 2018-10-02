@@ -34,7 +34,7 @@ CalendarDay.propTypes = {
   isSameDay: PropTypes.bool.isRequired,
   handleDayClick: PropTypes.func.isRequired,
   day: PropTypes.string.isRequired,
-  hasEvent: PropTypes.bool.isRequired,
+  eventsQuantity: PropTypes.number.isRequired,
 };
 
 export default CalendarDay;

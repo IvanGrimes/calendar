@@ -8,7 +8,7 @@ const EventCreate = ({
   time,
   description,
   handleChange,
-  isFormValid
+  isFormValid,
 }) => (
   <form className={css.form}>
     <input
@@ -26,13 +26,13 @@ const EventCreate = ({
       value={time}
       onChange={handleChange}
     />
-    <textarea
+    <input
       className={css.inputDescription}
       id="description"
       placeholder="Event's description"
       value={description}
       onChange={handleChange}
-    ></textarea>
+    />
     <button
       className={css.submit}
       type="submit"
@@ -46,6 +46,11 @@ const EventCreate = ({
 
 EventCreate.propTypes = {
   handleCreateEvent: PropTypes.func.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  time: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  isFormValid: PropTypes.bool.isRequired,
 };
 
 export default EventCreate;

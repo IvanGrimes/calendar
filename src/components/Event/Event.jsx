@@ -1,11 +1,16 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import EventEditContainer from '../EventEdit/EventEditContainer';
-import css from './Event.module.css';
 import { IconContext } from 'react-icons';
 import { FaEdit, FaTrashAlt } from 'react-icons/fa';
+import EventEditContainer from '../EventEdit/EventEditContainer';
+import css from './Event.module.css';
 
-const Event = ({ event, editing, handleEditEvent, handleDeleteEvent }) => (
+const Event = ({
+  event,
+  editing,
+  handleEditEvent,
+  handleDeleteEvent,
+}) => (
   <div className={css.event}>
     {editing ? (
       <EventEditContainer />
@@ -61,6 +66,9 @@ Event.propTypes = {
     description: PropTypes.string.isRequired,
     date: PropTypes.instanceOf(Date).isRequired,
   }).isRequired,
+  editing: PropTypes.bool.isRequired,
+  handleEditEvent: PropTypes.func.isRequired,
+  handleDeleteEvent: PropTypes.func.isRequired,
 };
 
 export default Event;
