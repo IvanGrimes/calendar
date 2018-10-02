@@ -6,7 +6,7 @@
 }
 
 .button {
-
+  cursor: pointer;
 }
 
 .buttonPrev {
@@ -20,8 +20,13 @@
 }
 
 .buttonIcon {
-  font-size: 20px;
+  font-size: 22px;
   color: #8C1566;
+  transition: color .2s linear;
+}
+
+.buttonIcon:hover {
+  color: #78145a;
 }
 
 .heading {
