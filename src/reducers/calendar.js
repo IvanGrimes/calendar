@@ -1,7 +1,7 @@
 import {
   CHANGE_MONTH,
   SELECT_DATE,
-} from '../constants/calendarActions';
+} from '../constants/actionTypes';
 
 const initialState = {
   currentMonth: new Date(),

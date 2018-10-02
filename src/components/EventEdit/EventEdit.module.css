@@ -1,31 +1,28 @@
 .form {
-  composes: form from '../EventCreate/EventCreate.module.css';
   margin: 0;
 }
 
 .inputTitle {
-  composes: inputTitle from '../EventCreate/EventCreate.module.css';
+  width: 100%;
 }
 
 .inputTime {
-  composes: inputTime from '../EventCreate/EventCreate.module.css';
   width: 100%;
   margin: 20px 0 0 0;
 }
 
 .inputDescription {
-  composes: inputDescription from '../EventCreate/EventCreate.module.css';
+  width: 100%;
+  margin: 20px 0 0 0;
 }
 
 .controls {
-
+  margin: 30px 0 0 0;
 }
 
 .done {
-  composes: submit from '../EventCreate/EventCreate.module.css';
 }
 
 .cancel {
-  composes: submit from '../EventCreate/EventCreate.module.css';
   margin: 0 0 0 20px;
 }

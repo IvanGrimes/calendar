@@ -1,5 +1,4 @@
 .week {
-  composes: row from '../Calendar/Calendar.module.css';
   line-height:30px;
   display: flex;
 }

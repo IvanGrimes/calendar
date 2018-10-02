@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { IconContext } from 'react-icons';
 import { FaEdit, FaTrashAlt } from 'react-icons/fa';
 import EventEditContainer from '../EventEdit/EventEditContainer';
+import Row from '../Row/Row';
 import css from './Event.module.css';
 
 const Event = ({
@@ -16,7 +17,7 @@ const Event = ({
       <EventEditContainer />
     ) : (
       <Fragment>
-        <div className={css.head}>
+        <Row className={css.head}>
           <h4 className={css.title}>
             {event.title}
           </h4>
@@ -46,7 +47,7 @@ const Event = ({
               </IconContext.Provider>
             </button>
           </div>
-        </div>
+        </Row>
 
         <p className={css.time}>
           {event.time}

@@ -4,7 +4,7 @@ import {
   EDIT_EVENT_CANCEL,
   EDIT_EVENT_FINISH,
   EDIT_EVENT_START,
-} from '../constants/eventActions';
+} from '../constants/actionTypes';
 
 export const createEvent = event => ({
   type: CREATE_EVENT,

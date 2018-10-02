@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import Button from '../Button/Button';
+import Input from '../Input/Input';
 import css from './EventEdit.module.css';
 
 const EventEdit = ({
@@ -12,7 +14,7 @@ const EventEdit = ({
   isFormValid,
 }) => (
   <form className={css.form}>
-    <input
+    <Input
       className={css.inputTitle}
       id="title"
       type="text"
@@ -20,7 +22,7 @@ const EventEdit = ({
       value={title}
       onChange={handleChange}
     />
-    <input
+    <Input
       className={css.inputTime}
       id="time"
       type="time"
@@ -28,7 +30,7 @@ const EventEdit = ({
       value={time}
       onChange={handleChange}
     />
-    <input
+    <Input
       className={css.inputDescription}
       id="description"
       placeholder="description"
@@ -36,21 +38,21 @@ const EventEdit = ({
       onChange={handleChange}
     />
     <div className={css.controls}>
-      <button
+      <Button
         className={css.done}
         type="submit"
         disabled={!isFormValid}
         onClick={handleFinishEdit}
       >
         Done
-      </button>
-      <button
+      </Button>
+      <Button
         className={css.cancel}
         type="button"
         onClick={handleCancelEdit}
       >
         Cancel
-      </button>
+      </Button>
     </div>
   </form>
 );

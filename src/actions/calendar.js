@@ -1,7 +1,4 @@
-import {
-  CHANGE_MONTH,
-  SELECT_DATE,
-} from '../constants/calendarActions';
+import { CHANGE_MONTH, SELECT_DATE } from '../constants/actionTypes';
 
 export const changeMonth = date => ({
   type: CHANGE_MONTH,

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CalendarWeekday from '../CalendarWeekday/CalendarWeekday';
+import Row from '../Row/Row';
 import css from './CalendarWeekdayList.module.css';
 
 const CalendarWeekdayList = ({ currentMonth }) => {
@@ -18,7 +19,7 @@ const CalendarWeekdayList = ({ currentMonth }) => {
   }
 
   return (
-    <div className={css.container}>{days}</div>
+    <Row className={css.container}>{days}</Row>
   );
 };
 

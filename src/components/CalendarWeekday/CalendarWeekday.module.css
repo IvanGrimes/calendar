@@ -1,5 +1,4 @@
 .item {
-  composes: col from '../Calendar/Calendar.module.css';
   display: flex;
   justify-content: center;
   font-size: 14px;

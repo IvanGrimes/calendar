@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Col from '../Col/Col';
 import css from './CalendarDay.module.css';
 
 const CalendarDay = ({
@@ -9,7 +10,7 @@ const CalendarDay = ({
   day,
   eventsQuantity,
 }) => (
-  <button
+  <Col
     type="button"
     className={`
       ${css.day}
@@ -26,7 +27,7 @@ const CalendarDay = ({
     ) : null}
     <span className={css.cloneDate}>{day}</span>
     <span className={css.date}>{day}</span>
-  </button>
+  </Col>
 );
 
 CalendarDay.propTypes = {

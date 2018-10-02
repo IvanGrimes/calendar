@@ -1,3 +1,8 @@
+// calendar
+export const CHANGE_MONTH = '@@calendar/CHANGE_MONTH';
+export const SELECT_DATE = '@@calendar/SELECT_DATE';
+
+// events
 export const CREATE_EVENT = '@@events/CREATE_EVENT';
 export const EDIT_EVENT_START = '@@events/EDIT_EVENT_START';
 export const EDIT_EVENT_CANCEL = '@@events/EDIT_EVENT_CANCEL';

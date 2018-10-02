@@ -3,13 +3,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { IconContext } from 'react-icons';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import Row from '../Row/Row';
 import css from './CalendarHeader.module.css';
 
 const CalendarHeader = ({ handlePrevMonth, currentMonth, handleNextMonth }) => {
   const dateFormat = 'MMMM YYYY';
 
   return (
-    <div className={css.container}>
+    <Row className={css.container}>
       <button
         className={css.buttonPrev}
         type="button"
@@ -33,7 +34,7 @@ const CalendarHeader = ({ handlePrevMonth, currentMonth, handleNextMonth }) => {
           <FaChevronRight />
         </IconContext.Provider>
       </button>
-    </div>
+    </Row>
   );
 };
 

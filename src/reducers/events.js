@@ -4,7 +4,7 @@ import {
   DELETE_EVENT, EDIT_EVENT_CANCEL,
   EDIT_EVENT_FINISH,
   EDIT_EVENT_START,
-} from '../constants/eventActions';
+} from '../constants/actionTypes';
 
 const initialState = {
   list: [
